@@ -4,6 +4,8 @@ include_recipe "python"
 include_recipe "postgresql::server"
 include_recipe "nodejs::install_from_package"
 include_recipe "supervisor"
+include_recipe "ruby_build"
+include_recipe "rbenv::user"
 
 # pillow requirements
 %w(libjpeg-dev libfreetype6 libfreetype6-dev zlib1g-dev).each do |pkg|
