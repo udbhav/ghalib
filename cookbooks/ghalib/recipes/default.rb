@@ -13,3 +13,12 @@ include_recipe "rbenv::user"
     action :install
   end
 end
+
+# rbenv and bundler
+execute "rbenv-bundler" do
+  path = node['ghalib']['home'] + '/.rbenv/plugins/bundler'
+  git_url = "git://github.com/carsomyr/rbenv-bundler.git"
+  # if dir doesn't exist
+  command "[ -d #{path} ] || git clone #{git_url} #{path}"
+  user "vagrant"
+end
