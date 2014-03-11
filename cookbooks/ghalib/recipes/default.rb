@@ -1,7 +1,11 @@
 include_recipe "apt"
+include_recipe "locale"
 include_recipe "nginx"
 include_recipe "python"
+
+ENV['LANGUAGE'] = ENV['LANG'] = ENV['LC_ALL'] = "en_US.UTF-8"
 include_recipe "postgresql::server"
+
 include_recipe "nodejs::install_from_package"
 include_recipe "supervisor"
 include_recipe "ruby_build"

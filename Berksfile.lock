@@ -55,6 +55,9 @@
     },
     "java": {
       "locked_version": "1.20.0"
+    },
+    "locale": {
+      "locked_version": "0.0.2"
     }
   }
 }
