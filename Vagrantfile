@@ -10,13 +10,12 @@ def load_user_lib( filename )
 end
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = "precise32"
+  config.vm.box = "hashicorp/precise32"
   config.vm.box_url = "http://files.vagrantup.com/precise32.box"
   config.vm.network :forwarded_port, host: 8001, guest: 80
   config.vm.network :forwarded_port, host: 3001, guest: 3000
 
   config.omnibus.chef_version = :latest
-  config.berkshelf.enabled = true
 
   # shared folders
   if File.exists? "shared_folders.json"
