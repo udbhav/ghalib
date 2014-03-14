@@ -4,7 +4,7 @@ include_recipe "nginx"
 include_recipe "python"
 
 ENV['LANGUAGE'] = ENV['LANG'] = ENV['LC_ALL'] = "en_US.UTF-8"
-node.default['postgresql']['pg_hba'].push({
+node.default['postgresql']['pg_hba'].unshift({
   :type => 'host', :db => 'all', :user => 'all', :addr => '127.0.0.1/32', :method => 'trust'})
 
 include_recipe "postgresql::server"
