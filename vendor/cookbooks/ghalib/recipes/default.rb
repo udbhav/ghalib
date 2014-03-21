@@ -13,12 +13,11 @@ include_recipe "nodejs::install_from_package"
 include_recipe "supervisor"
 include_recipe "ruby_build"
 include_recipe "rbenv::user"
-include_recipe "redis"
 
 # packages
 packages = [
   'libjpeg-dev', 'libfreetype6', 'libfreetype6-dev', 'zlib1g-dev', 'memcached',
-  'imagemagick']
+  'imagemagick', 'redis-server']
 
 packages.each do |pkg|
   package pkg
