@@ -13,6 +13,7 @@ include_recipe "nodejs::install_from_package"
 include_recipe "supervisor"
 include_recipe "ruby_build"
 include_recipe "rbenv::user"
+include_recipe "redis"
 
 # packages
 packages = [
