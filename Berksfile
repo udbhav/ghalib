@@ -8,5 +8,4 @@ cookbook 'nodejs'
 cookbook 'supervisor'
 cookbook 'rbenv', github: 'fnichol/chef-rbenv'
 cookbook 'ruby_build'
-
-cookbook 'ghalib', path: 'cookbooks/ghalib'
+cookbook 'mizra', github: 'udbhav/mizra'
