@@ -50,12 +50,15 @@ GIT
   specs:
     rbenv (0.7.3)
 
-PATH
-  remote: vendor/cookbooks/ghalib
+GIT
+  remote: https://github.com/udbhav/mizra
+  ref: master
+  sha: 9fec9b3ef66c0ef91891325f3171200e86d693d5
   specs:
-    ghalib (0.1.0)
+    mizra (0.1.0)
       apt (>= 0.0.0)
       locale (>= 0.0.0)
+      mongodb (>= 0.0.0)
       nginx (>= 0.0.0)
       nodejs (>= 0.0.0)
       postgresql (>= 0.0.0)
@@ -66,7 +69,7 @@ PATH
 
 DEPENDENCIES
   apt (>= 0)
-  ghalib (>= 0)
+  mizra (>= 0)
   mongodb (>= 0)
   nginx (>= 0)
   nodejs (>= 0)
