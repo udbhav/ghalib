@@ -12,6 +12,7 @@ end
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "hashicorp/precise32"
   config.vm.network :forwarded_port, host: 8001, guest: 80
+  config.vm.network :forwarded_port, host: 8002, guest: 81
   config.vm.network :forwarded_port, host: 3001, guest: 3000
 
   config.omnibus.chef_version = :latest
@@ -24,7 +25,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   config.vm.provision "chef_solo" do |chef|
-    chef.add_recipe "ghalib"
+    chef.add_recipe "mizra"
 
     chef.json = {
       "postgresql" => {
