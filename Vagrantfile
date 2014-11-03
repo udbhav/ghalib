@@ -11,16 +11,14 @@ end
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "hashicorp/precise32"
-  config.vm.network :forwarded_port, host: 8001, guest: 80
-  config.vm.network :forwarded_port, host: 8002, guest: 81
-  config.vm.network :forwarded_port, host: 3001, guest: 3000
+  config.vm.network "private_network", ip: "192.168.50.4"
 
   config.omnibus.chef_version = :latest
 
   # shared folders
   if File.exists? "shared_folders.json"
     JSON.parse(IO.read("shared_folders.json")).each do |folder|
-      config.vm.synced_folder folder[0], folder[1]
+      config.vm.synced_folder folder[0], folder[1], type: "nfs"
     end
   end
 
